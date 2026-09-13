@@ -57,3 +57,19 @@ jobs:
           tags: |
             ghcr.io/muhammadislahuddin/prostackhub-task-5-gitops-pipeline:${{ github.sha }}
             ghcr.io/muhammadislahuddin/prostackhub-task-5-gitops-pipeline:latest
+
+      - name: Update Helm image tag
+        run: |
+          sed -i "s/^  tag: .*/  tag: \"${GITHUB_SHA}\"/" helm/gitops-app/values.yaml
+
+          echo "Updated Helm values:"
+          grep "tag:" helm/gitops-app/values.yaml
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add helm/gitops-app/values.yaml
+
+          git commit -m "Update image tag to ${GITHUB_SHA} [skip ci]"
+
+          git push
