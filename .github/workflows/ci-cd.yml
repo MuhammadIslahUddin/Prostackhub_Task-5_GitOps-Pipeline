@@ -55,5 +55,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/prostackhub-task-5-gitops-pipeline:${{ github.sha }}
-            ghcr.io/${{ github.repository_owner }}/prostackhub-task-5-gitops-pipeline:latest
+            ghcr.io/muhammadislahuddin/prostackhub-task-5-gitops-pipeline:${{ github.sha }}
+            ghcr.io/muhammadislahuddin/prostackhub-task-5-gitops-pipeline:latest
