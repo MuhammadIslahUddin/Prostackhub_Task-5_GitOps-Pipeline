@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: ghcr.io/muhammadislahuddin/prostackhub-task-5-gitops-pipeline
-  tag: "1.0.0"
+  tag: "9dfaca905b45392ac09b2cef22a7aee766700263"
   pullPolicy: IfNotPresent
 
 service:
